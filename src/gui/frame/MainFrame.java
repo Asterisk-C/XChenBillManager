@@ -17,7 +17,7 @@ public class MainFrame
 		// TODO Auto-generated method stub
 		JFrame f = new JFrame();
 		f.setSize(800, 600);
-        f.setTitle("XCHEN BILL");
+        f.setTitle("XChen Bill Manager");
         f.setLocationRelativeTo(null);
         f.setResizable(true);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
