@@ -23,11 +23,11 @@ public class MainFrame
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         JToolBar tb = new JToolBar();
-        JButton bCost = new JButton("Cost Summary");
+        JButton bCost = new JButton("Spend Summary");
         JButton bRecord = new JButton("Record A Purchase");
         JButton bCategory = new JButton("Purchase Category");
         JButton bReport = new JButton("Monthly Report");
-        JButton bConfig = new JButton("Settings");
+        JButton bConfig = new JButton("Config");
         JButton bBackup = new JButton("Backup");
         JButton bRecovery = new JButton("Recovery");
         

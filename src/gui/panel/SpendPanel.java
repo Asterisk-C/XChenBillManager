@@ -1,9 +1,18 @@
 package gui.panel;
 
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
-public class SpendPanel 
+import util.CircleProgressBar;
+import util.GUIUtil;
+
+public class SpendPanel extends JPanel
 {
+	
+	static
+	{
+		GUIUtil.useLNF();
+	}
 	
 	private SpendPanel()
 	{
@@ -32,4 +41,6 @@ public class SpendPanel
 	JLabel vMonthLeft = new JLabel("$1800");
 	JLabel vAvgDailyAvailable = new JLabel("$200");
 	JLabel vMonthDayLeft = new JLabel("15 days");
+	
+	CircleProgressBar bar;
 }

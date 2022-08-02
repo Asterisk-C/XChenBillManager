@@ -7,5 +7,6 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="//seefin/users$/xchen/Desktop/GitHub_Projects/XChenBillManager/lib/liquidlnf.jar"/>
+	<classpathentry kind="lib" path="//seefin/users$/xchen/Desktop/GitHub_Projects/XChenBillManager/lib/chart.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
