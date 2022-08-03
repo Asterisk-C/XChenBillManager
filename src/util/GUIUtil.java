@@ -93,7 +93,7 @@ public class GUIUtil
 	{
 	    GUIUtil.useLNF();
 	    JFrame f = new JFrame();
-	    f.setSize(500, 500);
+	    f.setSize(750, 750);
 	    f.setLocationRelativeTo(null);
 	    CenterPanel cp = new CenterPanel(strech);
 	    f.setContentPane(cp);
