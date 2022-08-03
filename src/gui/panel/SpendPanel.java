@@ -20,6 +20,31 @@ public class SpendPanel extends JPanel
 		GUIUtil.useLNF();
 	}
 	
+    private static SpendPanel instance;
+	
+	public static SpendPanel getInstance()
+	{
+		if(instance == null)
+			instance = new SpendPanel();
+		return instance;
+	}
+	
+	public JLabel lMonthSpend = new JLabel("Spend this month");
+	public JLabel lDaySpend = new JLabel("Spend today");
+	public JLabel lAvgDailySpend = new JLabel("Average daily Spend");
+	public JLabel lMonthAvailable = new JLabel("Left this month");
+	public JLabel lAvgDailyAvailable = new JLabel("Average daily available");
+	public JLabel lMonthLeftDay = new JLabel("Days left in the month");
+	
+	public JLabel vMonthSpend = new JLabel("$2300");
+	public JLabel vDaySpend = new JLabel("$50");
+	public JLabel vAvgDailySpend = new JLabel("$30");
+	public JLabel vMonthAvailable = new JLabel("$1800");
+	public JLabel vAvgDailyAvailable = new JLabel("$200");
+	public JLabel vMonthLeftDay = new JLabel("15 days");
+	
+	CircleProgressBar bar;
+	
 	private SpendPanel()
 	{
 		this.setLayout(new BorderLayout());
@@ -36,31 +61,6 @@ public class SpendPanel extends JPanel
         this.add(center(), BorderLayout.CENTER);
         this.add(south(), BorderLayout.SOUTH);
 	}
-	
-	private static SpendPanel instance;
-	
-	public static SpendPanel getInstance()
-	{
-		if(instance == null)
-			instance = new SpendPanel();
-		return instance;
-	}
-
-	public JLabel lMonthSpend = new JLabel("Spend this month");
-	public JLabel lDaySpend = new JLabel("Spend today");
-	public JLabel lAvgDailySpend = new JLabel("Average daily Spend");
-	public JLabel lMonthAvailable = new JLabel("Left this month");
-	public JLabel lAvgDailyAvailable = new JLabel("Average daily available");
-	public JLabel lMonthLeftDay = new JLabel("Days left in the month");
-	
-	public JLabel vMonthSpend = new JLabel("$2300");
-	public JLabel vDaySpend = new JLabel("$50");
-	public JLabel vAvgDailySpend = new JLabel("$30");
-	public JLabel vMonthAvailable = new JLabel("$1800");
-	public JLabel vAvgDailyAvailable = new JLabel("$200");
-	public JLabel vMonthLeftDay = new JLabel("15 days");
-	
-	CircleProgressBar bar;
 	
 //	CENTER
 	private JPanel center() 
@@ -105,5 +105,11 @@ public class SpendPanel extends JPanel
         p.add(vMonthLeftDay);
  
         return p;
+    }
+    
+    public static void main(String[] args) 
+    {
+        
+        GUIUtil.showPanel(SpendPanel.getInstance());
     }
 }
