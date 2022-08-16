@@ -6,6 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JToolBar;
 
+import gui.frame.MainFrame;
 import util.CenterPanel;
 import util.GUIUtil;
 
@@ -18,7 +19,15 @@ public class MainPanel extends JPanel
 		GUIUtil.useLNF();
 	}
 	
-	public static MainPanel instance = new MainPanel();
+	private static MainPanel instance = new MainPanel();
+	
+	public static MainPanel getInstance()
+	{
+		if(instance == null)
+			instance = new MainPanel();
+		return instance;
+	}
+	
 	public JToolBar tb = new JToolBar();
 	
 	public JButton bSpend = new JButton();
