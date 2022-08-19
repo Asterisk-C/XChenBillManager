@@ -9,5 +9,6 @@
 	<classpathentry kind="lib" path="//seefin/users$/xchen/Desktop/GitHub_Projects/XChenBillManager/lib/liquidlnf.jar"/>
 	<classpathentry kind="lib" path="//seefin/users$/xchen/Desktop/GitHub_Projects/XChenBillManager/lib/chart.jar"/>
 	<classpathentry kind="lib" path="//seefin/users$/xchen/Desktop/GitHub_Projects/XChenBillManager/lib/swingx-core-1.6.2.jar"/>
+	<classpathentry kind="lib" path="//seefin/users$/xchen/Desktop/GitHub_Projects/XChenBillManager/lib/mysql-connector-java-5.0.8-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
