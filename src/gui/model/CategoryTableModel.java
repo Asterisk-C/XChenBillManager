@@ -4,20 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.event.TableModelListener;
+import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
 
-public class CategoryTableModel implements TableModel
+import entity.Category;
+import service.CategoryService;
+
+public class CategoryTableModel extends AbstractTableModel
 {
 	
-	String[] columnNames = new String[]{"Category Name","Paid Times"};
-    List<String> cs = new ArrayList<>();
+	String[] columnNames = new String[]{"Category Name", "Paid Times"};
+//    List<String> cs = new ArrayList<>();
+	public List<Category> cs = new CategoryService().list();
     
-    public CategoryTableModel(){
-    	cs.add("Food");
-		cs.add("Transportation");
-		cs.add("Accommodation");
-		cs.add("Call Charge");
-    }
+//    public CategoryTableModel(){
+//    	cs.add("Food");
+//		cs.add("Transportation");
+//		cs.add("Accommodation");
+//		cs.add("Call Charge");
+//    }
     
     @Override
     public int getRowCount() {
@@ -52,10 +57,11 @@ public class CategoryTableModel implements TableModel
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         // TODO Auto-generated method stub
+    	Category h = cs.get(rowIndex);
         if(0==columnIndex)
-            return cs.get(rowIndex);
+            return h.name;
         if(1==columnIndex)
-            return 0;
+            return h.recordNumber;
         return null;
     }
     
