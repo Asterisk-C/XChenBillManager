@@ -6,19 +6,25 @@ import java.util.List;
 import javax.swing.ComboBoxModel;
 import javax.swing.event.ListDataListener;
 
-public class CategoryComboBoxModel implements ComboBoxModel<String>
+import entity.Category;
+import service.CategoryService;
+
+public class CategoryComboBoxModel implements ComboBoxModel<Category>
 {
 	
-	public List<String> cs = new ArrayList<>();
+//	public List<String> cs = new ArrayList<>();
+	public List<Category> cs = new CategoryService().list();
 	
-	String c;
+	Category c;
+	
 	public CategoryComboBoxModel()
 	{
-		cs.add("Food");
-		cs.add("Transportation");
-		cs.add("Accommodation");
-		cs.add("Call Charge");
-		c = cs.get(0);
+//		cs.add("Food");
+//		cs.add("Transportation");
+//		cs.add("Accommodation");
+//		cs.add("Call Charge");
+		if(!cs.isEmpty())
+			c = cs.get(0);
 	}
 	
 	@Override
@@ -27,7 +33,7 @@ public class CategoryComboBoxModel implements ComboBoxModel<String>
     }
  
     @Override
-    public String getElementAt(int index) {
+    public Category getElementAt(int index) {
         return cs.get(index);
     }
  
@@ -45,14 +51,17 @@ public class CategoryComboBoxModel implements ComboBoxModel<String>
  
     @Override
     public void setSelectedItem(Object anItem) {
-        c = (String) anItem;
+        c = (Category) anItem;
          
     }
  
     @Override
     public Object getSelectedItem() {
         // TODO Auto-generated method stub
-        return c;
+        if(!cs.isEmpty())
+        	return c;
+        else
+        	return null;
     }
 
 }
