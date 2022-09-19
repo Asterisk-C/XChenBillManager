@@ -30,7 +30,7 @@ public class ConfigPanel extends WorkingPanel
 		return instance;
 	}
 	
-	JLabel lBudget = new JLabel("Budget this month($)");
+	JLabel lBudget = new JLabel("Budget this month(€)");
 	public JTextField tfBudget = new JTextField("0");
 	JLabel lMysql = new JLabel("Mysql installation path");
     public JTextField tfMysqlPath = new JTextField("");

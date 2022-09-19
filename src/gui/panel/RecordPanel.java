@@ -36,7 +36,7 @@ public class RecordPanel extends WorkingPanel
 		return instance;
 	}
 	
-	JLabel lSpend = new JLabel("Spend($)");
+	JLabel lSpend = new JLabel("Spend(€)");
     JLabel lCategory = new JLabel("Category");
     JLabel lComment = new JLabel("Comment");
     JLabel lDate = new JLabel("Date");

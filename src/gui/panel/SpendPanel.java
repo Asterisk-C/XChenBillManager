@@ -8,11 +8,13 @@ import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import gui.page.SpendPage;
+import service.SpendService;
 import util.CircleProgressBar;
 import util.ColorUtil;
 import util.GUIUtil;
 
-public class SpendPanel extends JPanel
+public class SpendPanel extends WorkingPanel
 {
 	
 	static
@@ -36,11 +38,11 @@ public class SpendPanel extends JPanel
 	public JLabel lAvgDailyAvailable = new JLabel("Average daily available");
 	public JLabel lMonthLeftDay = new JLabel("Days left in the month");
 	
-	public JLabel vMonthSpend = new JLabel("$2300");
-	public JLabel vDaySpend = new JLabel("$50");
-	public JLabel vAvgDailySpend = new JLabel("$30");
-	public JLabel vMonthAvailable = new JLabel("$1800");
-	public JLabel vAvgDailyAvailable = new JLabel("$200");
+	public JLabel vMonthSpend = new JLabel("€2300");
+	public JLabel vDaySpend = new JLabel("€50");
+	public JLabel vAvgDailySpend = new JLabel("€30");
+	public JLabel vMonthAvailable = new JLabel("€1800");
+	public JLabel vAvgDailyAvailable = new JLabel("€200");
 	public JLabel vMonthLeftDay = new JLabel("15 days");
 	
 	CircleProgressBar bar;
@@ -105,6 +107,37 @@ public class SpendPanel extends JPanel
         p.add(vMonthLeftDay);
  
         return p;
+    }
+    
+    @Override
+    public void updateData()
+    {
+    	SpendPage spend = new SpendService().getSpendPage();
+    	vMonthSpend.setText(spend.monthSpend);
+        vDaySpend.setText(spend.daySpend);
+        vAvgDailySpend.setText(spend.avgDailySpend);
+        vMonthAvailable.setText(spend.monthAvailable);
+        vAvgDailyAvailable.setText(spend.avgDailyAvailable);
+        vMonthLeftDay.setText(spend.monthLeftDay);
+        
+        bar.setProgress(spend.usagePercentage);
+//        Set different color
+        if (spend.isOverSpend) {
+            vMonthAvailable.setForeground(ColorUtil.warningColor);
+            vMonthSpend.setForeground(ColorUtil.warningColor);
+            vDaySpend.setForeground(ColorUtil.warningColor);
+ 
+        } else {
+            vMonthAvailable.setForeground(ColorUtil.grayColor);
+            vMonthSpend.setForeground(ColorUtil.blueColor);
+            vDaySpend.setForeground(ColorUtil.blueColor);
+        }
+    }
+    
+    @Override
+    public void addListener()
+    {
+    	
     }
     
     public static void main(String[] args) 
