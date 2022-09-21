@@ -18,7 +18,7 @@ public class SpendService
         int thisMonthTotalDay = DateUtil.thisMonthTotalDay();
         
         int monthSpend = 0;
-        int todaySpend = 0;
+        int daySpend = 0;
         float avgDailySpend = 0;
         int monthAvailable = 0;
         int avgDailyAvailable = 0;
@@ -32,7 +32,7 @@ public class SpendService
         }
  
         for (Record record : toDayRecords) {
-            todaySpend += record.getSpend();
+            daySpend += record.getSpend();
         }
         
         avgDailySpend = (float)(Math.round(monthSpend * 100 / thisMonthTotalDay)) / 100;
@@ -45,7 +45,7 @@ public class SpendService
  
         usagePercentage = monthSpend * 100 / monthBudget;
  
-        return new SpendPage(monthSpend, todaySpend, avgDailySpend, monthAvailable, avgDailyAvailable, monthLeftDay,
+        return new SpendPage(monthSpend, daySpend, avgDailySpend, monthAvailable, avgDailyAvailable, monthLeftDay,
                 usagePercentage);
 	}
 
