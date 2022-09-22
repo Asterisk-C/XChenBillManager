@@ -17,11 +17,11 @@ public class SpendService
         
         int thisMonthTotalDay = DateUtil.thisMonthTotalDay();
         
-        int monthSpend = 0;
-        int daySpend = 0;
+        float monthSpend = 0;
+        float daySpend = 0;
         float avgDailySpend = 0;
-        int monthAvailable = 0;
-        int avgDailyAvailable = 0;
+        float monthAvailable = 0;
+        float avgDailyAvailable = 0;
         int monthLeftDay = 0;
         int usagePercentage = 0;
         
@@ -43,7 +43,7 @@ public class SpendService
  
         avgDailyAvailable = monthAvailable / monthLeftDay;
  
-        usagePercentage = monthSpend * 100 / monthBudget;
+        usagePercentage = (int) (monthSpend * 100 / monthBudget);
  
         return new SpendPage(monthSpend, daySpend, avgDailySpend, monthAvailable, avgDailyAvailable, monthLeftDay,
                 usagePercentage);

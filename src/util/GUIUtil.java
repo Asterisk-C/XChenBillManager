@@ -15,7 +15,7 @@ import javax.swing.JTextField;
 public class GUIUtil 
 {
 	
-	private static String imageFolder = "//seefin/users$/xchen/Desktop/GitHub_Projects/XChenBillManager/img";
+	private static String imageFolder = "E:/Java Projects/XChenBillManager/img";
 	
 	public static boolean checkEmpty(JTextField tf, String input)
 	{
@@ -36,7 +36,7 @@ public class GUIUtil
 		
 		String text = tf.getText().trim();
 		try {
-			Integer.parseInt(text);
+			Float.parseFloat(text);
 			return true;
 		}catch(NumberFormatException e1){
 			JOptionPane.showMessageDialog(null, input + "Input should be number");
@@ -51,7 +51,7 @@ public class GUIUtil
 			return false;
 		
 		String text = tf.getText().trim();
-		if(Integer.parseInt(text) == 0)
+		if(Float.parseFloat(text) == 0)
 		{
 			JOptionPane.showMessageDialog(null, input + "Input can't be 0");
 			tf.grabFocus();

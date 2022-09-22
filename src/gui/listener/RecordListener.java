@@ -29,7 +29,7 @@ public class RecordListener implements ActionListener
 		
 		if(!GUIUtil.checkZero(p.tfSpend, "Spend($)"))
             return;
-		int spend = Integer.parseInt(p.tfSpend.getText());
+		float spend = Float.parseFloat(p.tfSpend.getText());
 		Category c = p.getSelectedCategory();
 		String comment = p.tfComment.getText();
 		Date d = p.datepick.getDate();

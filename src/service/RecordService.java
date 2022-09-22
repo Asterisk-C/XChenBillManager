@@ -9,7 +9,7 @@ import entity.Record;
 public class RecordService 
 {
 	RecordDAO recordDao = new RecordDAO();
-	public void add(int spend, Category c, String comment, Date date)
+	public void add(float spend, Category c, String comment, Date date)
 	{
 		Record r = new Record();
 		r.spend = spend;

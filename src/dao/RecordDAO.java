@@ -40,7 +40,7 @@ public class RecordDAO {
  
         String sql = "insert into record values(null,?,?,?,?)";
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
-            ps.setInt(1, record.spend);
+            ps.setFloat(1, record.spend);
             ps.setInt(2, record.cid);
             ps.setString(3, record.comment);
             ps.setDate(4, DateUtil.util2sql(record.date));
@@ -63,7 +63,7 @@ public class RecordDAO {
         String sql = "update record set spend= ?, cid= ?, comment =?, date = ? where id = ?";
         try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
  
-        	  ps.setInt(1, record.spend);
+        	  ps.setFloat(1, record.spend);
               ps.setInt(2, record.cid);
               ps.setString(3, record.comment);
               ps.setDate(4, DateUtil.util2sql(record.date));
@@ -103,7 +103,7 @@ public class RecordDAO {
  
             if (rs.next()) {
                 record = new Record();
-            	int spend = rs.getInt("spend");
+            	float spend = rs.getFloat("spend");
             	int cid = rs.getInt("cid");
                 String comment = rs.getString("comment");
                 Date date = rs.getDate("date");
@@ -141,7 +141,7 @@ public class RecordDAO {
             while (rs.next()) {
             	Record record = new Record();
             	int id = rs.getInt("id");
-             	int spend = rs.getInt("spend");
+             	float spend = rs.getFloat("spend");
              	int cid = rs.getInt("cid");
              	
                  String comment = rs.getString("comment");
@@ -175,7 +175,7 @@ public class RecordDAO {
             while (rs.next()) {
             	Record record = new Record();
             	int id = rs.getInt("id");
-             	int spend = rs.getInt("spend");
+             	float spend = rs.getFloat("spend");
              	
                  String comment = rs.getString("comment");
                  Date date = rs.getDate("date");
@@ -209,7 +209,7 @@ public class RecordDAO {
             	Record record = new Record();
             	int id = rs.getInt("id");
             	int cid = rs.getInt("cid");
-             	int spend = rs.getInt("spend");
+             	float spend = rs.getFloat("spend");
              	
                  String comment = rs.getString("comment");
                  Date date = rs.getDate("date");
@@ -243,7 +243,7 @@ public class RecordDAO {
             	Record record = new Record();
             	int id = rs.getInt("id");
             	int cid = rs.getInt("cid");
-             	int spend = rs.getInt("spend");
+             	float spend = rs.getFloat("spend");
              	
                  String comment = rs.getString("comment");
                  Date date = rs.getDate("date");

@@ -11,7 +11,7 @@ public class SpendPage
     public int usagePercentage;
     public boolean isOverSpend = false;
     
-    public SpendPage(int monthSpend, int daySpend, float avgDailySpend, int monthAvailable, int avgDailyAvailable,
+    public SpendPage(float monthSpend, float daySpend, float avgDailySpend, float monthAvailable, float avgDailyAvailable,
             int monthLeftDay, int usagePercentage)
     {
     	this.monthSpend = "€" + monthSpend;

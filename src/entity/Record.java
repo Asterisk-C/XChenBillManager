@@ -4,16 +4,16 @@ import java.util.Date;
 
 public class Record 
 {
-	public int spend;
+	public float spend;
     public int id;
     public int cid;
     public String comment;
     public Date date;
     
-	public int getSpend() {
+	public float getSpend() {
 		return spend;
 	}
-	public void setSpend(int spend) {
+	public void setSpend(float spend) {
 		this.spend = spend;
 	}
 	public int getId() {
