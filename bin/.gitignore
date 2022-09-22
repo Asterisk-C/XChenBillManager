@@ -1,6 +1,7 @@
+/gui/
 /util/
 /dao/
-/startup/
-/gui/
+/entity/
 /service/
-/page/
+/startup/
+/test/

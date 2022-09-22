@@ -10,7 +10,7 @@ import gui.panel.CategoryPanel;
 import gui.panel.ConfigPanel;
 import gui.panel.MainPanel;
 import gui.panel.RecordPanel;
-import gui.panel.RecoverPanel;
+import gui.panel.RecoveryPanel;
 import gui.panel.ReportPanel;
 import gui.panel.SpendPanel;
 
@@ -34,7 +34,7 @@ public class ToolBarListener implements ActionListener
         if (b == p.bBackup)
             p.workingPanel.show(BackupPanel.getInstance());
         if (b == p.bRecover)
-            p.workingPanel.show(RecoverPanel.getInstance());
+            p.workingPanel.show(RecoveryPanel.getInstance());
 	}
 
 }
